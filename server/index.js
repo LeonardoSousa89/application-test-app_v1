@@ -11,6 +11,10 @@ server.route('/app/create-account').get((req,res)=>{
     res.sendFile(__dirname + '/views/account/index.html')
 })
 
+server.route('/app/home').get((req,res)=>{
+    res.sendFile(__dirname + '/views/app/index.html')
+})
+
 
 
 module.exports = server
