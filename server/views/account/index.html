@@ -82,7 +82,10 @@
                         onError(response.text())
                     }
                 })
-                .then(response => response)
+                .then(response => {
+                    response
+                    clear()
+                })
                 .catch(err     => alert(err))
 
             })
@@ -96,6 +99,16 @@
                 error.then(body =>{
                     alert(body)
                 }) 
+            }
+
+            function clear() {
+                const username  = doc.getElementById('username')
+                const email     = doc.getElementById('email')
+                const pass      = doc.getElementById('pass')
+
+                username.value  = ''
+                email.value     = ''
+                pass            = ''
             }
     </script>
 </body>
