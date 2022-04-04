@@ -12,9 +12,18 @@
         body{
             height:100vh;
             width:100vw;
+            padding:5vh;
         }
         #login{
             width:100%;
+        }
+        .container-bottom{
+            margin-top:5vh;
+            text-align:center;
+        }
+        .container-bottom a{
+          text-decoration:none;
+          margin-left:1vh;
         }
     </style>
     <title>Document</title>
@@ -27,18 +36,18 @@
           </figure>
 
         <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">email</span>
-            <input type="text" class="form-control" id="email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" class="form-control" id="email" placeholder="email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
 
           <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">password</span>
-            <input type="password" class="form-control" id="pass" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="password" class="form-control" id="pass" placeholder="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
 
           <button type="button" class="btn btn-primary" id="login">login</button>
 
-          <strong>do you have't any account?<a id="create-account" href="http://localhost:3003/app/create-account">signup</a></strong>
+          <div class="container-bottom">
+               <strong>do you have't any account?<a id="create-account" href="http://localhost:3003/app/create-account">signup</a></strong>
+          </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
