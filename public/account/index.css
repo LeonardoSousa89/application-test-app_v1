@@ -2,7 +2,7 @@
     margin:0;
 }
 body{
-    height:100vh;
+    max-height:150vh;
     width:100vw;
     padding:5vh;
 }
@@ -16,4 +16,9 @@ body{
 .container-bottom a{
   text-decoration:none;
   margin-left:1vh;
+}
+#error-message{
+    margin-top:3vh;
+    margin-bottom:3vh;
+    text-align:center;
 }

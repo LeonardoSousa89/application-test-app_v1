@@ -1,6 +1,11 @@
 const doc = document
 const url_create_account = 'http://localhost:3002/app/create-account'
 
+doc.onload = addEventListener('load',()=>{
+    $('#error-message').hide()
+})
+
+
 $('#signup').click(function(){
     const username  = doc.getElementById('username').value
     const email     = doc.getElementById('email').value
@@ -29,6 +34,7 @@ $('#signup').click(function(){
         })
         .catch(err     => alert(err))
 
+        $('#error-message').empty() 
     })
 
 
@@ -38,7 +44,8 @@ $('#signup').click(function(){
 
     function onError(error) {
         error.then(body =>{
-            alert(body)
+            $('#error-message').append(body)
+            $('#error-message').show(100).fadeOut(5000)
         }) 
     }
 
