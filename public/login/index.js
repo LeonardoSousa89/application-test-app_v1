@@ -1,6 +1,10 @@
 const doc       = document
 const url_login = 'http://localhost:3002/app/login'
 
+doc.onload = addEventListener('load',()=>{
+    $('#error-message').hide()
+})
+
 $('#login').click(function(){
     const email     = doc.getElementById('email').value
     const pass      = doc.getElementById('pass').value
@@ -28,6 +32,7 @@ $('#login').click(function(){
         })
         .catch(err     => alert(err))
 
+        $('#error-message').empty() 
     })
 
 
@@ -42,6 +47,7 @@ $('#login').click(function(){
 
     function onError(error) {
         error.then(body =>{
-            alert(body)
+            $('#error-message').append(body)
+            $('#error-message').show(100).fadeOut(5000)
         }) 
     }
