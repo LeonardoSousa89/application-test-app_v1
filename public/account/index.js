@@ -37,7 +37,7 @@ $('#signup').click(function(){
         $('#error-message').empty() 
     })
 
-
+  /** fiquei nesta parte */
     function onSuccess(response) {
         response.then(body => body) 
     }
