@@ -3,6 +3,7 @@ const url_create_account = 'http://localhost:3002/app/create-account'
 
 doc.onload = addEventListener('load',()=>{
     $('#error-message').hide()
+    $('#success-message').hide()
 })
 
 
@@ -23,7 +24,7 @@ $('#signup').click(function(){
     fetch(url_create_account, config)
         .then(response=>{
             if(response.ok){
-                onSuccess(response.json())
+                onSuccess(response.text())
             }else{
                 onError(response.text())
             }
@@ -35,11 +36,14 @@ $('#signup').click(function(){
         .catch(err     => alert(err))
 
         $('#error-message').empty() 
+        $('#success-message').empty() 
     })
 
-  /** fiquei nesta parte */
     function onSuccess(response) {
-        response.then(body => body) 
+        response.then(body => {
+            $('#success-message').append(body)
+            $('#success-message').show(100).fadeOut(5000)
+        }) 
     }
 
     function onError(error) {
