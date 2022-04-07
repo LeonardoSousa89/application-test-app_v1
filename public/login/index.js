@@ -22,7 +22,6 @@ $('#login').click(function(){
         .then(response=>{
             if(response.ok){
                 onSuccess(response.text())
-                doc.location.href = 'http://localhost:3003/app/home'
             }else{
                 onError(response.text())
             }
@@ -37,12 +36,20 @@ $('#login').click(function(){
 
 
     function onSuccess(response) {
-        response.then(body => {
+        response.then(body => {  
             let json    = JSON.parse(body)
-            let id_user = localStorage.setItem('id_user',json.id_user)
-            let auth    = localStorage.setItem('auth',json.auth)
-            let token   = localStorage.setItem('_token',json._token)
+            localStorage.setItem('id_user',json.id_user)
+            localStorage.setItem('auth',json.auth)
+            localStorage.setItem('_token',json._token)
         }) 
+
+        isLogged()
+    }
+
+    function isLogged() {
+        let id_user = localStorage.getItem('id_user')
+        let id = JSON.parse(id_user)
+        doc.location.href = `http://localhost:3003/app/users/${id}`
     }
 
     function onError(error) {
