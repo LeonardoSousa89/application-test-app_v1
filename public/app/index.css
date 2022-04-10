@@ -35,7 +35,7 @@ body{
 
     display:flex;
     flex-direction:row;
-    justify-content:center;
+    justify-content:space-evenly;
     align-items:center;
     padding:1vh;
 }
@@ -77,6 +77,7 @@ body{
 }
 #card{
     grid-area:card;
+    background-color:whitesmoke;
 
     overflow-y:scroll;
 }
@@ -101,4 +102,8 @@ body{
 }
 #insert{
     
+}
+#out{
+    color:red;
+    cursor:pointer;
 }
