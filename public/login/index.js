@@ -56,5 +56,6 @@ $('#login').click(function(){
         error.then(body =>{
             $('#error-message').append(body)
             $('#error-message').show(100).fadeOut(5000)
-        }) 
-    }
+    }) 
+    
+}

@@ -21,25 +21,31 @@ $('#out').click(function(){
 })
 function getToken(){
     let id_user = localStorage.getItem('id_user')
-    let _token  = JSON.parse(localStorage.getItem('_token'))
+    let _token  = localStorage.getItem('_token')
 
     let url = `http://localhost:3002/app/users/${id_user}`
-    console.log(url)
-
-    let x_access_token = new Headers()
-    x_access_token.append('Authentication', `Bearer ${_token}` )
 
     let config = new Request(url,{ 
-            method:'GET',
-            mode:'cors',
-            headers:x_access_token
-         
-    })
-
+        method:'GET',
+        mode:'cors',
+        headers:{
+            'Content-Type':'application/x-www-form-urlencoded',
+            'X-Access-Token':`${_token}`
+        }
+})
     fetch(config)
         .then(response => response.json())
         .then(response =>{  
-            console.log(response)
+            response.map(e=>{
+                let usernameDb = e.username
+                let emailDB    = e.email
+
+                let username        = doc.getElementById('username')
+                username.innerHTML  = usernameDb
+                let email           = doc.getElementById('email')
+                email.innerHTML     = emailDB
+            })
         })
-        .catch(err     => console.log(err))
+        .catch(err => console.log(err))
 }
+
