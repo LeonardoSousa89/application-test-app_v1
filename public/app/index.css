@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap');
+*{
+    margin:0;
+}
+body{ 
+    border:solid 1px red;
+    height:100vh;
+}
+.contain,
+#header,
+#main,
+#footer{
+    height:100%;
+    width:100%;
+}
+.contain{
+    border:solid 1px blue;
+
+    display:grid;
+    grid-template-columns:100%;
+    grid-template-rows:10% 85% 5%;
+    grid-template-areas:'header header'
+                        'main     main'
+                        'footer footer';
+}
+#header,
+#line,
+#footer{
+    background:linear-gradient(47deg, #13678A 45%, #012030 55%);
+}
+#header,
+#footer{
+    font-family:'Holtwood One SC', serif;
+    color:whitesmoke;
+}
+#header{
+    grid-area:header;
+
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    padding:1vh;
+}
+#main{
+    border:solid 1px red;
+    grid-area:main;
+
+    display:grid;
+    grid-template-columns:100%;
+    grid-template-rows:40% 60%;
+    grid-template-areas:'form  form'
+                        'card  card';
+}
+#footer{
+    grid-area:footer;
+
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    text-align:center;
+}
+#footer p{
+    font-size:small;
+    margin-top:1vh;
+}
+#footer p a{
+    text-decoration:none;
+    color:whitesmoke;
+}
+#line{
+    height:0.5vh;
+    border-radius:48%;
+}
+#form{
+    border:solid 1px red;
+    grid-area:form;
+}
+#card{
+    border:solid 1px red;
+    grid-area:card;
+
+    overflow-y:scroll;
+}
+#card::-webkit-scrollbar{
+    width:10px;
+}
+#card::-webkit-scrollbar-track {
+    background:linear-gradient(47deg, #13678A 45%, #012030 55%);        
+}
+#card::-webkit-scrollbar-thumb {
+    background-color: #45C4B0;    
+    border-radius: 20px;       
+  }
