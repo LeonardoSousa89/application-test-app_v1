@@ -23,7 +23,7 @@ function getToken(){
     let id_user = localStorage.getItem('id_user')
     let _token  = localStorage.getItem('_token')
 
-    let url = `http://localhost:3002/app/users/${id_user}`
+    let url = `http://localhost:3002/app/users/data/${id_user}`
 
     let config = new Request(url,{ 
         method:'GET',
@@ -37,15 +37,27 @@ function getToken(){
         .then(response => response.json())
         .then(response =>{  
             response.map(e=>{
+                let idDB       = e.id_user
                 let usernameDb = e.username
                 let emailDB    = e.email
-
+                
+                let id_user         = doc.getElementById('id_user')
                 let username        = doc.getElementById('username')
-                username.innerHTML  = usernameDb
                 let email           = doc.getElementById('email')
-                email.innerHTML     = emailDB
+                     
+
+                factoryHeader(idDB,id_user,'Id: ')
+                factoryHeader(usernameDb,username, 'Username: ')
+                factoryHeader(emailDB,email,'Email: ')
             })
         })
         .catch(err => console.log(err))
 }
-
+function factoryHeader(elDb,elHtml,description){
+    let created         = doc.createElement('p')
+    created             = description
+    elHtml.innerHTML    = created + elDb
+}
+function factoryCard(){
+    return []
+}
