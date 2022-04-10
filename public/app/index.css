@@ -44,7 +44,6 @@ body::-webkit-scrollbar-thumb {
     color:whitesmoke;
 }
 #header{
-    /* border:5px solid red; */
     grid-area:header;
 
     padding:2vh;
@@ -53,7 +52,6 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
 }
 #main{
-    /* border:solid 5px green; */
     grid-area:main;
 
     font-family: 'Rubik', sans-serif;
@@ -69,7 +67,6 @@ body::-webkit-scrollbar-thumb {
     padding:3vh;
 }
 #footer{
-    /* border:solid 5px yellow; */
     grid-area:footer;
 
     display:flex;
@@ -114,9 +111,6 @@ body::-webkit-scrollbar-thumb {
     height:5px;
     margin-bottom: 10vh;
 }
-#insert{
-    
-}
 #out{
     color:red;
     cursor:pointer;
@@ -131,15 +125,14 @@ body::-webkit-scrollbar-thumb {
     justify-content: space-between;
 }
 #app_data{
-    /* border:solid 1px red; */
 }
 #user_data{
-    /* border:solid 1px red; */
 }
 #user_img{
     font-size:8vh;
 }
-@media screen and (max-device-width:768px) {
+@media screen and (max-device-width:768px) 
+              and (orientation: portrait){
     .contain{
         display:grid;
         grid-template-columns:100%;
@@ -147,19 +140,53 @@ body::-webkit-scrollbar-thumb {
         grid-template-areas:'header header'
                             'main     main'
                             'footer footer';
+                }
+    #header #app_data{
+        height:40%;
+    }
+    #header #user_data{
+        flex-direction:column;
+        justify-content:center;
+        align-items: center;
+    }
+    #header #out{
+        font-size:2rem;
+    }
+    #insert{
+        width:100%;
+    }   
+}
+@media screen and (max-device-width:768px) 
+              and (orientation: landscape){
+    body{ 
+        height:150vh;
+    }
+    .contain{
+        display:grid;
+        grid-template-columns:100%;
+        grid-template-rows:30% 115% 5%;
+        grid-template-areas:'header header'
+                             'main     main'
+                             'footer footer';
     }
     #header #app_data{
         /* border:solid 1px red; */
-        height:40%;
+        height:30%;
     }
     #header #user_data{
         /* border:solid 1px red; */
         flex-direction:column;
         justify-content:center;
         align-items: center;
-  }
-  #header #out{
-   font-size:2rem;
+    }
+    #header #out{
+        font-size:2rem;
+    }
+    #insert{
+        width:100%;
+    }
+    #title, #anotation{
+        height:60px;
+        margin-bottom: 4vh;
+    }
 }
-}
-
