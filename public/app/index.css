@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Rubik:ital,wght@0,300;1,300&display=swap');
 *{
     margin:0;
 }
@@ -55,6 +56,8 @@ body::-webkit-scrollbar-thumb {
     /* border:solid 5px green; */
     grid-area:main;
 
+    font-family: 'Rubik', sans-serif;
+
     display:grid;
     grid-template-columns:100%;
     grid-template-rows:50% 50%;
@@ -82,16 +85,13 @@ body::-webkit-scrollbar-thumb {
     text-decoration:none;
     color:whitesmoke;
 }
-#line{
-    height:0.5vh;
-    border-radius:48%;
-}
 #form{
     grid-area:form;
 }
 #card{
     grid-area:card;
-    background-color:whitesmoke;
+    background-color:#012030;
+    color:#9AEBA3;
 
     overflow-y:scroll;
 }
