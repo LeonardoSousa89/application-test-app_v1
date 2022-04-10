@@ -39,8 +39,8 @@ $('#login').click(function(){
         response.then(body => {  
             let json    = JSON.parse(body)
             localStorage.setItem('id_user',json.id_user)
-            localStorage.setItem('auth',JSON.stringify(json.auth))
-            localStorage.setItem('_token',JSON.stringify(json._token))
+            localStorage.setItem('auth',json.auth)
+            localStorage.setItem('_token',json._token)
         }) 
 
         isLogged()
