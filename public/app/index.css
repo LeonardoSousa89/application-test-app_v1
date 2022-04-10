@@ -58,10 +58,9 @@ body::-webkit-scrollbar-thumb {
 
     display:grid;
     grid-template-columns:100%;
-    grid-template-rows:50% 50%;
+    grid-template-rows:35% 65%;
     grid-template-areas:'form  form'
                         'card  card';
-
 }
 #main #form{
     padding:3vh;
@@ -89,6 +88,7 @@ body::-webkit-scrollbar-thumb {
     grid-area:card;
     background-color:#012030;
     color:#9AEBA3;
+    padding:3vh;
 
     overflow-y:scroll;
 }

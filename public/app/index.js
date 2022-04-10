@@ -5,9 +5,10 @@ doc.onload = addEventListener('load',()=>{
     let id_user = localStorage.getItem('id_user')
     let _token  = localStorage.getItem('_token')
 
-    if(!auth && !id_user && ! _token) {
+    if(!auth && !id_user && !_token) {
         doc.location.href = 'http://localhost:3003/app/login'
-    }else{
+    }
+    else{
         getToken()
     }
 })
@@ -23,19 +24,16 @@ function getToken(){
     let _token  = JSON.parse(localStorage.getItem('_token'))
 
     let url = `http://localhost:3002/app/users/${id_user}`
+    console.log(url)
 
     let x_access_token = new Headers()
     x_access_token.append('Authentication', `Bearer ${_token}` )
 
-    console.log(x_access_token)
-
     let config = new Request(url,{ 
             method:'GET',
             mode:'cors',
-            headers: {
-                'Content-Type':'application/json',
-                x_access_token
-            }
+            headers:x_access_token
+         
     })
 
     fetch(config)
