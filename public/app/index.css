@@ -3,7 +3,6 @@
     margin:0;
 }
 body{ 
-    border:solid 1px red;
     height:100vh;
 }
 .contain,
@@ -14,8 +13,6 @@ body{
     width:100%;
 }
 .contain{
-    border:solid 1px blue;
-
     display:grid;
     grid-template-columns:100%;
     grid-template-rows:10% 85% 5%;
@@ -43,14 +40,17 @@ body{
     padding:1vh;
 }
 #main{
-    border:solid 1px red;
     grid-area:main;
 
     display:grid;
     grid-template-columns:100%;
-    grid-template-rows:40% 60%;
+    grid-template-rows:50% 50%;
     grid-template-areas:'form  form'
                         'card  card';
+
+}
+#main #form{
+    padding:3vh;
 }
 #footer{
     grid-area:footer;
@@ -73,11 +73,9 @@ body{
     border-radius:48%;
 }
 #form{
-    border:solid 1px red;
     grid-area:form;
 }
 #card{
-    border:solid 1px red;
     grid-area:card;
 
     overflow-y:scroll;
@@ -91,4 +89,16 @@ body{
 #card::-webkit-scrollbar-thumb {
     background-color: #45C4B0;    
     border-radius: 20px;       
-  }
+}
+#title{
+    height:5px;
+    margin-top:0.5vh;
+    margin-bottom: 10vh;
+}
+#anotation{
+    height:5px;
+    margin-bottom: 10vh;
+}
+#insert{
+    
+}
