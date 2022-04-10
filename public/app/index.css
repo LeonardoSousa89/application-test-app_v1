@@ -178,11 +178,9 @@ body::-webkit-scrollbar-thumb {
                              'footer footer';
     }
     #header #app_data{
-        /* border:solid 1px red; */
         height:30%;
     }
     #header #user_data{
-        /* border:solid 1px red; */
         flex-direction:column;
         justify-content:center;
         align-items: center;

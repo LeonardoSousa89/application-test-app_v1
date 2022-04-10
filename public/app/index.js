@@ -44,7 +44,6 @@ function getToken(){
                 let id_user         = doc.getElementById('id_user')
                 let username        = doc.getElementById('username')
                 let email           = doc.getElementById('email')
-                     
 
                 factoryHeader(idDB,id_user,'Id: ')
                 factoryHeader(usernameDb,username, 'Username: ')
