@@ -77,22 +77,15 @@ $('#insert').click(function(){
     fetch(config)
         .then(response => {
             response.json()
-            clear()
+            doc.location.reload()
         } )
         .catch(err     => console.log(err))
 })
-function clear(){
-    let title     = doc.querySelector('[anotation-title]')
-    let anotation = doc.querySelector('[anotation-anotation]')
-
-    title.value     = ''
-    anotation.value = ''
-}
 function loadData(){
     let id_user = localStorage.getItem('id_user')
     let _token  = localStorage.getItem('_token')
 
-    let url = `http://localhost:3002/app/users/data/${id_user}`
+    let url = `http://localhost:3002/app/users/${id_user}`
 
     let config = new Request(url,{ 
         method:'GET',
@@ -106,16 +99,29 @@ function loadData(){
         .then(response => response.json())
         .then(response =>{  
             response.map(e=>{
-                let titleDB       = e.title
-                let anotationDb   = e.anotation
+                let titleDB         = e.title
+                let anotationDb     = e.anotation
+
+                console.log('db elements:' + titleDB,anotationDb)
+                let titleH1         = doc.createElement('h1')
+                titleH1.append(titleDB)
                 
+                let anotationH4     = doc.createElement('h4')
+                anotationH4.append(anotationDb)
+                
+                console.log('created elements:' + titleH1,anotationH4)
+                let breakPoint      = doc.createElement('hr')
+
                 let container       = doc.createElement('span')
                 let card            = doc.getElementById('card')
 
-               container.append(titleDB)
-               container.append(anotationDb)
+               container.append(titleH1)
+               container.append(breakPoint)
+               container.append(anotationH4)
+               console.log(container)
 
                card.append(container)
+               console.log('card:' + card)
             })
         })
         .catch(err => console.log(err))
