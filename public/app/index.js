@@ -59,7 +59,7 @@ $('#insert').click(function(){
     let id_user = localStorage.getItem('id_user')
     let _token  = localStorage.getItem('_token')
 
-    let url = `http://localhost:3002/app/users/data/${id_user}`
+    let url = `http://localhost:3002/app/users/${id_user}`
 
     data = {    title, anotation   }
 
@@ -67,16 +67,26 @@ $('#insert').click(function(){
         method:'POST',
         mode:'cors',
         headers:{
-            'Content-Type':'application/x-www-form-urlencoded',
+            'Content-Type':'application/json',
             'X-Access-Token':`${_token}`
         },
         body:JSON.stringify(data)
     })
 
     fetch(config)
-        .then(response => response.json())
+        .then(response => {
+            response.json()
+            clear()
+        } )
         .catch(err     => console.log(err))
 })
+function clear(){
+    let title     = doc.querySelector('[anotation-title]')
+    let anotation = doc.querySelector('[anotation-anotation]')
+
+    title.value     = ''
+    anotation.value = ''
+}
 function factoryHeader(elDb,elHtml,description){
     let created         = doc.createElement('p')
     created             = description
