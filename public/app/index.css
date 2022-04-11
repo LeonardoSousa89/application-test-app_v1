@@ -43,6 +43,11 @@ body::-webkit-scrollbar-thumb {
     font-family:'Holtwood One SC', serif;
     color:whitesmoke;
 }
+#header p{
+    color:#9AEBA3;
+    text-shadow: rgba(0,0,0,0.5) 5px 0;
+    letter-spacing:1px;
+}
 #header{
     grid-area:header;
 
@@ -91,6 +96,20 @@ body::-webkit-scrollbar-thumb {
     padding:3vh;
 
     overflow-y:scroll;
+
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+}
+#card span{
+    /* border: solid 1px #9AEBA3; */
+    border-radius:6px;
+    height:200px;
+    width:350px;
+    box-shadow:inset 0 0 1em #9AEBA3, 0 0 2em #DAFDBA;
+    background:#13678A;
+    padding:1em;
 }
 #card::-webkit-scrollbar{
     width:10px;
@@ -125,6 +144,10 @@ body::-webkit-scrollbar-thumb {
     justify-content: space-between;
 }
 #app_data{
+    height: 30%;
+    border-radius:6px;
+    background-color: #012030;
+    padding:1vh;
 }
 #user_data{
 }
@@ -163,6 +186,9 @@ body::-webkit-scrollbar-thumb {
     #insert{
         width:100%;
     }   
+    #header #id_user{
+        display:none;
+ }  
 }
 @media screen and (max-device-width:768px) 
               and (orientation: landscape){
@@ -194,7 +220,7 @@ body::-webkit-scrollbar-thumb {
     #title, #anotation{
         height:60px;
         margin-bottom: 4vh;
-    }
+    }    
 }
 @media screen and (max-device-width:745px) 
               and (orientation: landscape){
