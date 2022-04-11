@@ -100,7 +100,7 @@ function loadData(){
         .then(response =>{  
             response.map(e=>{
                 let titleDB         = e.title
-                let anotationDb     = e.anotation
+                let anotationDb     = e.anotation.substring(0,60)
 
                 console.log('db elements:' + titleDB,anotationDb)
                 let titleH1         = doc.createElement('h1')
