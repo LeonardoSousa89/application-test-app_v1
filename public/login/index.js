@@ -9,16 +9,12 @@ $('#login').click(function(){
     const email     = doc.getElementById('email').value
     const pass      = doc.getElementById('pass').value
 
-    const Head = new Headers()
-    Head.append('Origin','https://anotation-app.herokuapp.com')
-
     const data   = { email, pass }
     const config = {
         method:'POST',
         body:JSON.stringify(data),
         headers:{
-            'Content-Type':'application/json',
-             Head
+            'Content-Type':'application/json'
         }
     }
 
