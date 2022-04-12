@@ -13,7 +13,6 @@ $('#login').click(function(){
     const config = {
         method:'POST',
         body:JSON.stringify(data),
-        origin:'https://anotation-app.herokuapp.com',
         headers:{
             'Content-Type':'application/json'
         },
