@@ -14,7 +14,6 @@ $('#login').click(function(){
         method:'POST',
         body:JSON.stringify(data),
         headers:{
-            'Access-Control-Allow-Origin':'https://anotation-app.herokuapp.com',
             'Content-Type':'application/json'
         }
     }
