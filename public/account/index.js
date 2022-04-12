@@ -1,5 +1,5 @@
 const doc = document
-const url_create_account = 'http://localhost:3002/app/create-account'
+const url_create_account = 'https://anotation-api.herokuapp.com/app/create-account'
 
 doc.onload = addEventListener('load',()=>{
     $('#error-message').hide()

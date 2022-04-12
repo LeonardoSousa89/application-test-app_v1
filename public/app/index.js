@@ -24,7 +24,7 @@ function getToken(){
     let id_user = localStorage.getItem('id_user')
     let _token  = localStorage.getItem('_token')
 
-    let url = `http://localhost:3002/app/users/data/${id_user}`
+    let url = `https://anotation-api.herokuapp.com/app/users/data/${id_user}`
 
     let config = new Request(url,{ 
         method:'GET',
@@ -60,7 +60,7 @@ $('#insert').click(function(){
     let id_user = localStorage.getItem('id_user')
     let _token  = localStorage.getItem('_token')
 
-    let url = `http://localhost:3002/app/users/${id_user}`
+    let url = `https://anotation-api.herokuapp.com/app/users/${id_user}`
 
     data = {    title, anotation   }
 
@@ -85,7 +85,7 @@ function loadData(){
     let id_user = localStorage.getItem('id_user')
     let _token  = localStorage.getItem('_token')
 
-    let url = `http://localhost:3002/app/users/${id_user}`
+    let url = `https://anotation-api.herokuapp.com/app/users/${id_user}`
 
     let config = new Request(url,{ 
         method:'GET',

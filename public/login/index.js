@@ -1,5 +1,5 @@
 const doc       = document
-const url_login = 'http://localhost:3002/app/login'
+const url_login = 'https://anotation-api.herokuapp.com/app/login'
 
 doc.onload = addEventListener('load',()=>{
     $('#error-message').hide()
