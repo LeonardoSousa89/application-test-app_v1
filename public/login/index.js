@@ -49,7 +49,7 @@ $('#login').click(function(){
     function isLogged() {
         let id_user = localStorage.getItem('id_user')
         let id = JSON.parse(id_user)
-        doc.location.href = `http://localhost:3003/app/users/${id}`
+        doc.location.href = `https://anotation-app.herokuapp.com/app/users/${id}`
     }
 
     function onError(error) {

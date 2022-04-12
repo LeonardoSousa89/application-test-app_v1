@@ -6,7 +6,7 @@ doc.onload = addEventListener('load',()=>{
     let _token  = localStorage.getItem('_token')
 
     if(!auth && !id_user && !_token) {
-        doc.location.href = 'http://localhost:3003/app/login'
+        doc.location.href = 'https://anotation-app.herokuapp.com/app/login'
     }
     else{
         getToken()
@@ -14,7 +14,7 @@ doc.onload = addEventListener('load',()=>{
     }
 })
 $('#out').click(function(){
-    doc.location.href = 'http://localhost:3003/app/login'
+    doc.location.href = 'https://anotation-app.herokuapp.com/app/login'
 
     localStorage.removeItem('auth')
     localStorage.removeItem('id_user')
