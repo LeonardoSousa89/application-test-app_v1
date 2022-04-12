@@ -33,7 +33,7 @@ function getToken(){
             'Content-Type':'application/x-www-form-urlencoded',
             'X-Access-Token':`${_token}`
         }
-})
+    })
     fetch(config)
         .then(response => response.json())
         .then(response =>{  
@@ -94,7 +94,7 @@ function loadData(){
             'Content-Type':'application/x-www-form-urlencoded',
             'X-Access-Token':`${_token}`
         }
-})
+    })
     fetch(config)
         .then(response => response.json())
         .then(response =>{  
